@@ -20,15 +20,19 @@ const app = express()
 connectToDB()
 
 //
-
+const corsOptions = {
+    origin: 'https://event-spectra.netlify.app',
+    credentials: true // Allow cookies or other credentials to be sent
+  };
 
 //  MIDDLEWARE
 app.use(cookieParser())
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(morgan('dev'))
 
+res.setHeader('Access-Control-Allow-Origin', 'https://event-spectra.netlify.app');
 
 
 // ROUTES
