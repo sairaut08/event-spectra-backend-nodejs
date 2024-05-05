@@ -32,7 +32,7 @@ app.use(express.json())
 app.use(cors(corsOptions))
 app.use(morgan('dev'))
 
-res.setHeader('Access-Control-Allow-Origin', 'https://event-spectra.netlify.app');
+
 
 
 // ROUTES
